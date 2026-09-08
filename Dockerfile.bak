@@ -4,7 +4,6 @@ RUN apk add --no-cache \
         git \
         unzip \
         oniguruma-dev \
-        linux-headers \
     && docker-php-ext-install -j$(nproc) mbstring pcntl sockets \
     && rm -rf /tmp/*
 
