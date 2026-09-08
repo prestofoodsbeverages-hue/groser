@@ -13,7 +13,8 @@ COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 WORKDIR /app
 COPY . /app
 
-RUN composer install \
+RUN mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views storage/logs storage/app/public bootstrap/cache \
+    && composer install \
     --no-dev \
     --prefer-dist \
     --no-interaction \
